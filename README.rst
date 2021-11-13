@@ -14,20 +14,8 @@ Python UDP 30303 Discovery Library
     :target: https://codecov.io/gh/garbled1/py30303_disc
     :alt: Codecov
 
-.. image:: https://img.shields.io/codacy/grade/ae042ac066554bfab398024b0beea6a5/master?label=Codacy
-    :target: https://app.codacy.com/manual/garbled1/py30303_disc/dashboard
-    :alt: Codacy
-
-.. image:: https://api.codeclimate.com/v1/badges/d96cc9a1841a819cd4f5/maintainability
-   :target: https://codeclimate.com/github/garbled1/py30303_disc/maintainability
-   :alt: Maintainability
-
-.. image:: https://img.shields.io/codeclimate/tech-debt/garbled1/py30303_disc
-    :target: https://codeclimate.com/github/garbled1/py30303_disc
-    :alt: Code Climate technical debt
-
-.. image:: https://img.shields.io/readthedocs/python-project-skeleton/latest?label=Read%20the%20Docs
-    :target: https://python-project-skeleton.readthedocs.io/en/latest/index.html
+.. image:: https://img.shields.io/readthedocs/py30303_disc/latest?label=Read%20the%20Docs
+    :target: https://py30303_disc.readthedocs.io/en/latest/index.html
     :alt: Read the Docs
 
 Summary

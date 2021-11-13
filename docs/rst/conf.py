@@ -6,8 +6,7 @@ import os
 import mock
 import sys
 
-import sphinx_py3doc_enhanced_theme
-
+# import sphinx_py3doc_enhanced_theme
 
 mock_modules = [
     'matplotlib',
@@ -65,10 +64,12 @@ linkcheck_ignore = [
     r'https://codecov.io/gh/garbled1/py30303_disc/*',
     ]
 
-html_theme = "sphinx_py3doc_enhanced_theme"
-html_theme_path = [sphinx_py3doc_enhanced_theme.get_html_theme_path()]
+html_theme = "groundwork"
+#html_theme_path = [groundwork-sphinx-theme.get_html_theme_path()]
 html_theme_options = {
-    'githuburl': 'https://github.com/garbled1/py30303_disc',
+    # 'githuburl': 'https://github.com/garbled1/py30303_disc',
+    'github_user': 'garbled1',
+    'github_fork': 'garbled1/py30303_disc'
     }
 
 html_use_smartypants = True
