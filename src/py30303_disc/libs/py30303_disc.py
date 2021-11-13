@@ -58,7 +58,7 @@ class d30303:
     def unsubscribe(self, fut):
         self._subscribers.pop(id(fut), None)
 
-    def send_discovery(self, msg_type):
+    def send_discovery(self, msg_type=0):
         """Initiate a 30303 discovery of type X."""
         self.log.debug("Initiating type %s discovery.", msg_type)
         self._send_queue.append((
@@ -145,14 +145,14 @@ class d30303:
         self._run_future(
             *(fut(data, addr) for fut in self._subscribers.values()))
 
-    def parse(self, data, addr, mac_prefix, hostname):
+    def parse(self, data, addr, mac_prefix=None, hostname=None):
         """Parse a d30303 message."""
 
         ip_addr = addr[0]
         data_string = data.decode("utf-8").split('\r\n')
         self.log.info("Hostname: %s", data_string[0])
 
-        message = [ip_addr, data_string[0].strip(), data_string[1]]
+        message = (ip_addr, data_string[0].strip(), data_string[1])
         
         if mac_prefix is None and hostname is None:
             return message

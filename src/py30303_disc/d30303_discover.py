@@ -21,13 +21,13 @@ class run_d30303:
 
     async def on_datagram_received(self, data, addr):
         # Override virtual method and process incoming data
-        print(f"Found: {self.server.parse(data, addr, None, None)}")
+        print(f"Found: {self.server.parse(data, addr)}")
         
     async def do_send(self):
         # Delay for prevent tasks concurency
         await asyncio.sleep(0.001)
         # Enqueue data for send
-        self.server.send_discovery(0)
+        self.server.send_discovery()
         await asyncio.sleep(5)
         self.server.send_discovery(1)
         await asyncio.sleep(5)
