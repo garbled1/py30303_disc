@@ -12,9 +12,6 @@ parallel = true
 [report]
 show_missing = true
 precision = 2
-omit =
-    *migrations*
-    src/py30303_disc/__main__.py
-    src/py30303_disc/d30303_discover.py
+omit = *migrations*
 exclude_lines = 
     if __name__ == .__main__.:
