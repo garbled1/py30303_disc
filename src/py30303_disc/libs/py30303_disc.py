@@ -53,9 +53,11 @@ class d30303:
         self._run_future(self._send_periodically(), self._recv_periodically())
 
     def subscribe(self, fut):
+        """Subscribe to be notified on discovery."""
         self._subscribers[id(fut)] = fut
 
     def unsubscribe(self, fut):
+        """Unsubscribe from notifications."""
         self._subscribers.pop(id(fut), None)
 
     def send_discovery(self, msg_type=0):
@@ -67,10 +69,12 @@ class d30303:
         self._send_event.set()
 
     def _run_future(self, *args):
+        """Kick it off."""
         for fut in args:
             asyncio.ensure_future(fut, loop=self.loop)
 
     def _sock_recv(self, fut=None, registered=False):
+        """Recieve data on the listen socket."""
         fd = self._sock.fileno()
 
         if fut is None:
@@ -92,6 +96,7 @@ class d30303:
         return fut
 
     def _sock_send(self, data, addr, fut=None, registered=False):
+        """Send data to the broadcast addr."""
         fd = self._sock.fileno()
 
         if fut is None:
@@ -116,6 +121,7 @@ class d30303:
         return fut
 
     async def _send_periodically(self):
+        """If we have data, send it."""
         while True:
             await self._send_event.wait()
             try:
@@ -126,6 +132,7 @@ class d30303:
                 self._send_event.clear()
 
     async def _recv_periodically(self):
+        """Check for new data, get it."""
         while True:
             data, addr = await self._sock_recv()
             self.log.debug("Got Data: %s", data)
