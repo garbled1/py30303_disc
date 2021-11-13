@@ -3,8 +3,8 @@ Package interface.
 
 This is the main package interface.
 """
-from sampleproject import cli_int1
+from py30303_disc import d30303_discover
 
 
 if __name__ == '__main__':
-    cli_int1.main()
+    d30303_discover.main()
