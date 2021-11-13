@@ -21,3 +21,4 @@ prune tests
 global-exclude *.py[cod] __pycache__/* *.so *.dylib 
 global-exclude tags
 global-exclude *.swp
+global-exclude *~
