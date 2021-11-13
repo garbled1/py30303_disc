@@ -12,8 +12,10 @@ def test_true():
     """Just asserts True."""
     assert True
 
-
+    
 def test_py30303_disc():
-    """Just call the class."""
+    """Very basic testing."""
     s = py30303_disc.d30303()
+
+    s.send_discovery()
     s.end_discovery()
