@@ -146,6 +146,7 @@ class d30303:
         pass
 
     def _datagram_received(self, data, addr):
+        """Internal: Got some data."""
         return data, addr
 
     def _notify_subscribers(self, data, addr):
