@@ -16,6 +16,5 @@ omit =
     *migrations*
     src/py30303_disc/__main__.py
     src/py30303_disc/d30303_discover.py
-    src/py30303_disc/libs/py30303_disc.py
 exclude_lines = 
     if __name__ == .__main__.:
