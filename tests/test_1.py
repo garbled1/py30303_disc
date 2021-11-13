@@ -1,6 +1,6 @@
 """Performs general tests."""
 # import amodule
-from py30303_disc.libs import py30303_disc as d30303
+from src.py30303_disc.libs import py30303_disc
 
 
 # def test_amodule():
@@ -14,11 +14,5 @@ def test_true():
 
 
 def test_sampleclass():
-    """Test samplemodule SampleClass true method."""
-    s = d30303.SampleClass()
-    assert s.true() is True
-
-
-def test_sampleclass_false():
-    """Test samplemodule SampleClass false classmethod."""
-    assert d30303.SampleClass.false() is False
+    """Just call the class."""
+    s = py30303_disc.d30303()
