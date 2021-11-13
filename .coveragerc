@@ -6,7 +6,7 @@ source =
 [run]
 branch = true
 source =
-    sampleproject
+    py30303_disc
 parallel = true
 
 [report]

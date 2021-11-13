@@ -4,4 +4,4 @@ Source documentation
 .. toctree::
     :glob:
 
-    sampleproject*
+    py30303_disc*

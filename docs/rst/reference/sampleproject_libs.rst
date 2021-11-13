@@ -1,8 +1,8 @@
 Libs
 ====
 
-.. automodule:: sampleproject.libs
+.. automodule:: py30303_disc.libs
     :members:
 
-.. automodule:: sampleproject.libs.samplemodule
+.. automodule:: py30303_disc.libs.samplemodule
     :members:

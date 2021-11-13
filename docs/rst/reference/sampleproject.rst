@@ -1,10 +1,10 @@
-sampleproject
+py30303_disc
 =============
 
 .. testsetup::
 
-    from sampleproject import *
+    from py30303_disc import *
 
-.. automodule:: sampleproject
+.. automodule:: py30303_disc
     :members:
 

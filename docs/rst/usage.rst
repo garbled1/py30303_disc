@@ -2,8 +2,6 @@
 Usage
 =====
 
-**This is an example page for a real project.** Describe here examples on how to use your software!
+To use ``py30303_disc``::
 
-To use ``SampleProject``::
-
-	import sampleproject
+	import py30303_disc

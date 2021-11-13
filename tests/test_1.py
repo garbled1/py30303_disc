@@ -1,11 +1,11 @@
 """Performs general tests."""
-import amodule
-from sampleproject.libs import samplemodule as SM
+# import amodule
+from py30303_disc.libs import py30303_disc as d30303
 
 
-def test_amodule():
-    """Test amodule.hello()."""
-    amodule.hello()
+# def test_amodule():
+#     """Test amodule.hello()."""
+#     amodule.hello()
 
 
 def test_true():
@@ -15,10 +15,10 @@ def test_true():
 
 def test_sampleclass():
     """Test samplemodule SampleClass true method."""
-    s = SM.SampleClass()
+    s = d30303.SampleClass()
     assert s.true() is True
 
 
 def test_sampleclass_false():
     """Test samplemodule SampleClass false classmethod."""
-    assert SM.SampleClass.false() is False
+    assert d30303.SampleClass.false() is False

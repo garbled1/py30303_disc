@@ -1,7 +1,7 @@
 Authors
 =======
 
-* Joao M. C. Teixeira (`webpage`_, `github`_)
+* Tim Rightnour (`webpage`_, `github`_)
 
-.. _webpage: https://bit.ly/joaomcteixeira
-.. _github: https://github.com/joaomcteixeira
+.. _webpage: https://www.garbled.net/
+.. _github: https://github.com/garbled1
