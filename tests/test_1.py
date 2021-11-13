@@ -1,7 +1,7 @@
 """Performs general tests."""
 # import amodule
-from src.py30303_disc.libs import py30303_disc
-
+# from src.py30303_disc.libs import py30303_disc
+from py30303_disc.libs import py30303_disc
 
 # def test_amodule():
 #     """Test amodule.hello()."""
@@ -13,6 +13,7 @@ def test_true():
     assert True
 
 
-def test_sampleclass():
+def test_py30303_disc():
     """Just call the class."""
     s = py30303_disc.d30303()
+    s.end_discovery()

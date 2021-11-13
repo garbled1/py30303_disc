@@ -39,4 +39,4 @@ An async python library to perform UDP 30303 network discovery
 Issues and Discussions
 ======================
 
-As usual in any GitHub based project, raise an `issue`_ if you find any bug or room for improvement (certainly there are many), or open a `discussion`_ (new feature!!) if you want to discuss or talk :-)
+As usual in any GitHub based project, raise an issue if you find any bug or room for improvement (certainly there are many), or open a discussion (new feature!!) if you want to discuss or talk :-)
