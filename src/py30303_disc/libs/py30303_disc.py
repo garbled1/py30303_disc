@@ -154,7 +154,12 @@ class d30303:
             *(fut(data, addr) for fut in self._subscribers.values()))
 
     def parse(self, data, addr, mac_prefix=None, hostname=None):
-        """Parse a d30303 message."""
+        """Parse a d30303 message.
+
+        Returns a tuple of ip, hostname, macaddr
+        Hostname is as reported by device, not DNS
+        macaddr is in the form XX-XX-XX-XX-XX-XX
+        """
 
         ip_addr = addr[0]
         data_string = data.decode("utf-8").split('\r\n')
