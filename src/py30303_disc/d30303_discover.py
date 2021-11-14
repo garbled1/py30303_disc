@@ -8,31 +8,7 @@ USAGE:
 import asyncio
 import logging
 
-from .libs.py30303_disc import d30303
-
-
-class run_d30303:
-    def __init__(self, server, loop):
-        self.server = server
-        self.loop = loop
-        # Subscribe for incoming udp packet event
-        self.server.subscribe(self.on_datagram_received)
-        asyncio.ensure_future(self.do_send(), loop=self.loop)
-
-    async def on_datagram_received(self, data, addr):
-        # Override virtual method and process incoming data
-        print(f"Found: {self.server.parse(data, addr)}")
-        
-    async def do_send(self):
-        # Delay for prevent tasks concurency
-        await asyncio.sleep(0.001)
-        # Enqueue data for send
-        self.server.send_discovery()
-        await asyncio.sleep(5)
-        self.server.send_discovery(1)
-        await asyncio.sleep(5)
-        self.server.end_discovery()
-        self.loop.stop()
+from .libs.py30303_disc import d30303, run_d30303_discovery
 
 
 async def main(loop):
@@ -42,7 +18,11 @@ async def main(loop):
     d30303_discovery = d30303()
     d30303_discovery.bind_d30303_recv(loop=loop)
 
-    run_d30303(server=d30303_discovery, loop=loop)
+    scanner = run_d30303_discovery(server=d30303_discovery, loop=loop)
+
+    found_dev = await scanner.get_found_devices()
+    print(found_dev)
+    loop.stop()
 
 
 if __name__ == '__main__':

@@ -16,6 +16,42 @@ D30303_MSG = [
 ]
 
 
+class run_d30303_discovery:
+    """Discovery oneshot class."""
+    def __init__(self, server, loop, timeout=5, d_type=0,
+                 host_match=None, mac_prefix=None):
+        """Initialize the discovery."""
+        self.server = server
+        self.loop = loop
+        self.timeout = timeout
+        self.d_type = d_type
+        self.host_match = host_match
+        self.mac_prefix = mac_prefix
+        self.devices = []
+        self.discovery_finished = False
+        # Subscribe for incoming udp packet event
+        self.server.subscribe(self.on_datagram_received)
+        asyncio.ensure_future(self.do_send(), loop=self.loop)
+
+    async def on_datagram_received(self, data, addr):
+        self.devices.append(self.server.parse(data,
+                                              addr,
+                                              mac_prefix=self.mac_prefix,
+                                              hostname=self.host_match,))
+        
+    async def do_send(self):
+        self.server.send_discovery(self.d_type)
+        await asyncio.sleep(self.timeout)
+        self.server.end_discovery()
+        self.discovery_finished = True
+
+    async def get_found_devices(self):
+        while not self.discovery_finished:
+            await asyncio.sleep(1)
+
+        return self.devices
+
+
 class d30303:
     """Documentation of d30303."""
     
