@@ -92,4 +92,4 @@ As usual in any GitHub based project, raise an issue if you find any bug or room
 Version
 =======
 
-v0.2.0
+v0.3.0

@@ -36,7 +36,7 @@ long_description = '{}\n{}'.format(
 
 setup(
     name='py30303_disc',
-    version='0.2.0',
+    version='0.3.0',
     description='UDP 30303 Network discovery library.',
     long_description=long_description,
     long_description_content_type='text/x-rst',
