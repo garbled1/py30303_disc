@@ -21,13 +21,22 @@ Python UDP 30303 Discovery Library
 Summary
 =======
 
-An async python library to perform UDP 30303 network discovery
+An async python library to perform UDP network discovery.
+
+Protocols Supported
+===================
+
+There are 3 protocols supported by this library:
+
+* 30303 - Simple and basic
+* wiznet - Wiznet devices, does not fully decode the packet (yet)
+* ecowitt - Ecowitt weather stations
 
 
-Notes on the Protocol
-=====================
+Notes on the 30303 Protocol
+===========================
 
-When you perform a discovery, any device that responds will report 3 things.
+When you perform a 303030 discovery, any device that responds will report 3 things.
 
 IP Address
 
@@ -60,14 +69,19 @@ parse(data, addr, hostname="blah", mac_prefix="blah")
   Match both the hostname and the mac_prefix.
 
 
-For the send_discovery() function, there are two modes.  Default mode is 0.
+For the send_discovery() function, there are 4 modes.  Default mode is "basic_30303".
 
-send_discovery(0)
+send_discovery("basic_30303")
   Sends "Discovery: Who is out there?"
 
-send_discovery(1)
+send_discovery("simple_30303")
   Sends "D"
 
+send_discovery("wiznet")
+  Sends "FIND" (requires reply port bound to 5001)
+
+send_discovery("ecowitt")
+  Sends an ecowitt CMD_BROADCAST, requires reply port bound to 59387
   
 Issues and Discussions
 ======================

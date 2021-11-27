@@ -16,9 +16,9 @@ async def main(loop):
     logging.basicConfig(level=logging.DEBUG)
 
     d30303_discovery = d30303()
-    d30303_discovery.bind_d30303_recv(loop=loop)
+    d30303_discovery.bind_d30303_recv(loop=loop, d_type="ecowitt")
 
-    scanner = run_d30303_discovery(server=d30303_discovery, loop=loop)
+    scanner = run_d30303_discovery(server=d30303_discovery, loop=loop, d_type="ecowitt")
 
     found_dev = await scanner.get_found_devices()
     print(found_dev)
